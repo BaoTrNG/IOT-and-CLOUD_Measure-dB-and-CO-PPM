@@ -1,0 +1,24 @@
+{
+    "name": "MQ5Sensor",
+    "keywords": "MQ5Sensor",
+    "description": "MQ5 Sensor for Arduino, ESP8266",
+    "authors": {
+        "name": "thiminhnhut",
+        "email": "thiminhnhut@gmail.com",
+        "url": "https://github.com/thiminhnhut",
+        "maintainer": true
+    },
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/thiminhnhut/sensor-mq5-arduino.git"
+    },
+    "export": {
+        "include": "MQ5Sensor"
+    },
+    "frameworks": "arduino",
+    "platforms": [
+        "atmelavr",
+        "espressif8266"
+    ]
+}
