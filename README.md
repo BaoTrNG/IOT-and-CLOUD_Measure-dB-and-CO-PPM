@@ -1,5 +1,5 @@
 measure CO ppm and noise level(dB) and send to iot cloud to display in chart, gauge chart in real time. If value above threshhold (1000 for ppm
-80 for dB) then send a warning message to user email.
+80 for dB) then send a warning email to user email.
  
  -----------PARTS REQUIRE-----------
  
