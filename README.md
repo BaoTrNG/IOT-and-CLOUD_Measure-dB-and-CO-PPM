@@ -9,6 +9,9 @@ measure CO ppm and noise level(dB) and send to iot cloud to display in chart, ga
  -----------PARTS REQUIRE-----------
  
  
+ 
+ 
+ 
  -----------OTHER REQUIRE-----------
  
   - WIFI 
@@ -28,4 +31,10 @@ measure CO ppm and noise level(dB) and send to iot cloud to display in chart, ga
 
  
  
+ 
+-----------CURCUIT DIAGRAM--------
+ 
 ![image](https://user-images.githubusercontent.com/27564856/209489342-41321209-a558-415c-bdbd-cecda34ae5b5.png)
+
+-----------CURCUIT DIAGRAM--------
+
