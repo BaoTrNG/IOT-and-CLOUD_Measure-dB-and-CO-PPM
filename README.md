@@ -9,6 +9,16 @@ measure CO ppm and noise level(dB) and send to iot cloud to display in chart, ga
  -----------PARTS REQUIRE-----------
  
  
+ -
+ -
+ -
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -29,6 +39,11 @@ measure CO ppm and noise level(dB) and send to iot cloud to display in chart, ga
 
 -----------OTHER REQUIRE-----------
 
+ 
+ -
+ -
+ -
+ 
  
  
  
