@@ -10,7 +10,7 @@ unsigned int sample;
 #define PINMQ135 35
 #define PINKY037 34
 #define ledrgb 2
-unsigned long EmailStart =0;
+int EmailStart =0;
 bool IsSent = false;
 MQ135 mq135_sensor(PINMQ135);
 
@@ -71,6 +71,7 @@ void ReadSoundDB()
    while (millis() - startMillis < sampleWindow)
    {
       sample = analogRead(PINKY037);                    //get reading from microphone
+      Serial.println(sample);
       if (sample < 1024)                                  // toss out spurious readings
       {
          if (sample > signalMax)
@@ -85,7 +86,7 @@ void ReadSoundDB()
    }
  
    peakToPeak = signalMax - signalMin;                    // max - min = peak-peak amplitude
-   sound = map(peakToPeak,20,900,49.5,90);             //calibrate for deciBels
+   sound = map(peakToPeak,20,1023,49,120);             //calibrate for deciBels
   Serial.print(sound);
   Serial.println(" db");
 
@@ -169,55 +170,72 @@ void PPM_EmailSender(float value)
     return;
   if (!MailClient.sendMail(&smtp, &message))
     Serial.println("Error sending Email, " + smtp.errorReason());
-    
 }
+
 void SendEmail()
 {
   if(IsSent ==false)
   {
-    IsSent = true;
     CheckValue();
   } 
   EmailStart++;
-  if(EmailStart >11)
+  Serial.println(EmailStart);
+  if(EmailStart >= 11)
   {
     IsSent = false;
-    EmailStart =0;
+    EmailStart = 0;
   }
   Serial.println(IsSent);
+}
+void LedControl()
+{
+  if(ppm >1000 || sound >78)
+  {
+  digitalWrite(ledrgb,HIGH);
+  Serial.write("high");
+  }
+  else if(ppm < 1000 || sound <75)
+  {
+     digitalWrite(ledrgb,LOW);
+       Serial.write("low");
+
+  }
 }
 void CheckValue()
 {
  if(ppm > 2000)
  {
   PPM_EmailSender(2000);
-  digitalWrite(ledrgb,HIGH);
+      IsSent = true;
+
  }
  else if(ppm >1000 && ppm <2000)
  {
   PPM_EmailSender(1000);
-  digitalWrite(ledrgb,HIGH);
+      IsSent = true;
+
  }
- else if(ppm < 990)   digitalWrite(ledrgb,LOW);
 
 
  if(sound > 120)
  {
   DB_EmailSender(120);
-  digitalWrite(ledrgb,HIGH);
+      IsSent = true;
+
  }
  else if(sound < 120 && sound >79)
  {
   DB_EmailSender(79);
-  digitalWrite(ledrgb,HIGH);
+      IsSent = true;
+
  }
- else if(sound < 75) digitalWrite(ledrgb,LOW);
 }
 void loop() 
 {
 
   ReadPPM();
   ReadSoundDB();
+  LedControl();
   SendEmail();
   ArduinoCloud.update();
   delay(1000);
