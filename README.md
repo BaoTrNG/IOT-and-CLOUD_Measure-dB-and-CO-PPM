@@ -6,7 +6,7 @@ measure CO ppm and noise level(dB) and send to iot cloud to display in chart, ga
   - DEV KIT: 1x ESP32.
   - SENSOR: 1x MQ135, 1x KY037
   
- -----------PARTS REQUIRE-----------
+ -----------------------------------
  
  
  -
@@ -37,7 +37,7 @@ measure CO ppm and noise level(dB) and send to iot cloud to display in chart, ga
     ![image](https://user-images.githubusercontent.com/27564856/209491484-a2469abf-650f-4f8c-9b29-af27ab44e40c.png)
 
 
------------OTHER REQUIRE-----------
+----------------------------------
 
  
  -
@@ -51,5 +51,5 @@ measure CO ppm and noise level(dB) and send to iot cloud to display in chart, ga
  
 ![image](https://user-images.githubusercontent.com/27564856/209489342-41321209-a558-415c-bdbd-cecda34ae5b5.png)
 
------------CURCUIT DIAGRAM--------
+----------------------------------
 
