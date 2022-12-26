@@ -25,7 +25,8 @@ measure CO ppm and noise level(dB) and send to iot cloud to display in chart, ga
  -----------OTHER REQUIRE-----------
  
   - WIFI 
-  -ARDUINO IOT CLOUD ACCOUNT
+  
+  - ARDUINO IOT CLOUD ACCOUNT
     
     SET UP VARIABLE 
     
